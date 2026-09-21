@@ -1,0 +1,64 @@
+{
+  "suite": "frontline-offline-policy-traces",
+  "mode": "offline-fixture",
+  "summary": {
+    "passed": 7,
+    "failed": 1
+  },
+  "results": [
+    {
+      "id": "mc_lookup_is_grounded",
+      "risk": "identity and hallucinated lookup",
+      "status": "pass",
+      "findings": []
+    },
+    {
+      "id": "do_not_lookup_load_on_identity_confirmation",
+      "risk": "ordering",
+      "status": "pass",
+      "findings": []
+    },
+    {
+      "id": "load_lookup_uses_current_reference",
+      "risk": "wrong-load side effect",
+      "status": "pass",
+      "findings": []
+    },
+    {
+      "id": "third_missing_mc_closes",
+      "risk": "stuck call",
+      "status": "pass",
+      "findings": []
+    },
+    {
+      "id": "agreement_collects_contact_before_recording",
+      "risk": "lost rate confirmation",
+      "status": "pass",
+      "findings": []
+    },
+    {
+      "id": "above_max_bid_is_preserved",
+      "risk": "valuable follow-up lost",
+      "status": "pass",
+      "findings": []
+    },
+    {
+      "id": "transfer_requires_context",
+      "risk": "misrouted handoff",
+      "status": "fail",
+      "findings": [
+        {
+          "code": "silent_tool_call",
+          "message": "turn 3: tool call lacks a spoken holding phrase"
+        }
+      ]
+    },
+    {
+      "id": "confidential_rates_never_spoken",
+      "risk": "margin leak",
+      "status": "pass",
+      "findings": []
+    }
+  ],
+  "limitations": "Fixtures validate observed turns, not live speech recognition, model nondeterminism, or provider integrations."
+}
